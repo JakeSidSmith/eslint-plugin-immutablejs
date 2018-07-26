@@ -1,5 +1,5 @@
 import test from 'ava';
-import rule from '../lib/rules/require-defaults';
+import rule from '../lib/rules/not-set-values';
 import RuleTester from 'eslint/lib/testers/rule-tester';
 import { constructValidSnippets, constructInvalidSnippets } from './_construct-snippets';
 
@@ -14,7 +14,7 @@ const errors = [
     }
 ];
 
-test('"require-defaults" Rule', t => {
+test('"not-set-values" Rule', t => {
     const ruleTester = new RuleTester();
 
     const valid = constructValidSnippets([
@@ -73,7 +73,7 @@ test('"require-defaults" Rule', t => {
         `
     ], parserOptions, errors);
 
-    ruleTester.run('require-defaults', rule, { valid, invalid });
+    ruleTester.run('not-set-values', rule, { valid, invalid });
 
     t.pass();
 });
