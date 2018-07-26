@@ -26,6 +26,9 @@ test('"require-defaults" Rule', t => {
         `,
         `
         a.getIn(['foo', 'bar'], 'baz');
+        `,
+        `
+        get('this is fine because it is not a property')
         `
     ], parserOptions);
 
