@@ -10,7 +10,7 @@ const parserOptions = {
 
 const errors = [
     {
-        message: 'ImmutableJS getters must have a default value.'
+        message: 'ImmutableJS methods must have a notSetValue'
     }
 ];
 
