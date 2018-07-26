@@ -29,6 +29,18 @@ test('"require-defaults" Rule', t => {
         `,
         `
         get('this is fine because it is not a property')
+        `,
+        `
+        a.find(() => {
+            return true;
+        }, context, {})
+        `,
+        `
+        a.updateIn(['foo'], {}, () => {
+            return {
+                foo: 'bar'
+            };
+        })
         `
     ], parserOptions);
 
@@ -41,6 +53,23 @@ test('"require-defaults" Rule', t => {
         `,
         `
         a.getIn(['foo', 'bar']);
+        `,
+        `
+        a.find(() => {
+            return true;
+        }, context)
+        `,
+        `
+        a.find(() => {
+            return true;
+        })
+        `,
+        `
+        a.updateIn(['foo'], () => {
+            return {
+                foo: 'bar'
+            };
+        })
         `
     ], parserOptions, errors);
 
