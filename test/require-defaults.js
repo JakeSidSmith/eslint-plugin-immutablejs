@@ -41,7 +41,7 @@ test('"require-defaults" Rule', t => {
         `
     ], parserOptions, errors);
 
-    ruleTester.run('immutable-no-map-set', rule, { valid, invalid });
+    ruleTester.run('require-defaults', rule, { valid, invalid });
 
     t.pass();
 });
